@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="81c15964-d4c8-4cf4-a56a-155313f2cb37" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alien_invasion.py" beforeDir="false" afterPath="$PROJECT_DIR$/alien_invasion.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +35,8 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/m254524/Documents/GitHub/alien_invasion&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/m254524/Documents/GitHub/alien_invasion/game.py&quot;,
+    &quot;two.files.diff.last.used.file&quot;: &quot;C:/Users/m254524/Documents/GitHub/alien_invasion/game.py&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
