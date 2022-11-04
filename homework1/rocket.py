@@ -1,5 +1,7 @@
 import sys
 import pygame
+
+
 class Ship:
     """ A class to manage the player ship."""
 
@@ -16,7 +18,7 @@ class Ship:
         # Start each new ship at the bottom center of the screen.
         self.rect.center = self.screen_rect.center
 
-        #store a decimal value for the ships horizontal position
+        # store a decimal value for the ships horizontal position
         self.x = float(self.rect.x)
         self.y = float(self.rect.y)
 
@@ -38,7 +40,7 @@ class Ship:
         if self.moving_bottom and self.rect.bottom < self.screen_rect.bottom:
             self.y += 1.5
 
-        #update rect object from self.x and self.y
+        # update rect object from self.x and self.y
         self.rect.x = self.x
         self.rect.y = self.y
 
@@ -69,8 +71,6 @@ class Rocket:
             self._check_events()
             self.ship.update()
             self._update_screen()
-
-
 
     def _check_events(self):
         """Respond to key presses and mouse events."""
