@@ -16,10 +16,10 @@ class Ship:
         self.rect = self.image.get_rect()
 
         # Start each new ship at the bottom center of the screen.
-        self.rect.center = self.screen_rect.center
+        self.rect.midleft = self.screen_rect.midleft
 
         # store a decimal value for the ships horizontal position
-        self.x = float(self.rect.x)
+
         self.y = float(self.rect.y)
 
         # Movements flag
@@ -31,12 +31,11 @@ class Ship:
         # Update the ship's x value not the rect value.
 
         if self.moving_top and self.rect.top > self.screen_rect.top:
-            self.y -= 1.5
+            self.y -= 2.5
         if self.moving_bottom and self.rect.bottom < self.screen_rect.bottom:
-            self.y += 1.5
+            self.y += 2.5
 
         # update rect object from self.x and self.y
-        self.rect.x = self.x
         self.rect.y = self.y
 
     def blitme(self):
