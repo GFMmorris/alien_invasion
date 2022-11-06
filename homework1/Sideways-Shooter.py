@@ -59,9 +59,9 @@ class Ship:
         # Update the ship's x value not the rect value.
 
         if self.moving_top and self.rect.top > self.screen_rect.top:
-            self.y -= 2.5
+            self.y -= 1.5
         if self.moving_bottom and self.rect.bottom < self.screen_rect.bottom:
-            self.y += 2.5
+            self.y += 1.5
 
         # update rect object from self.x and self.y
         self.rect.y = self.y
@@ -78,8 +78,8 @@ class SidewaysShooter:
         pygame.init()
 
         self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-        self.screen_width = 1000
-        self.screen_height = 800
+        self.screen_width = self.screen.get_rect().width
+        self.screen_height = self.screen.get_rect().height
         self.bg_color = (230, 230, 230)
         pygame.display.set_caption("SidewaysShooter")
 
@@ -138,7 +138,7 @@ class SidewaysShooter:
 
         # get rid of bullets that have disappeared
         for bullet in self.bullets.copy():
-            if bullet.rect.bottom <= 0:
+            if bullet.rect.left >= self.screen_width:
                 self.bullets.remove(bullet)
 
     def _update_screen(self):
