@@ -41,6 +41,8 @@ class Ship:
 
         # load the ship image and get its rect
         self.image = pygame.image.load('images/ship.bmp')
+        self.image = pygame.transform.rotate(self.image, 270)
+
         self.rect = self.image.get_rect()
 
         # Start each new ship at the bottom center of the screen.
