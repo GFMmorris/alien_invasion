@@ -23,18 +23,13 @@ class Ship:
         self.y = float(self.rect.y)
 
         # Movements flag
-        self.moving_right = False
-        self.moving_left = False
         self.moving_top = False
         self.moving_bottom = False
 
     def update(self):
         """Update the ship's position based on the movement flag."""
         # Update the ship's x value not the rect value.
-        if self.moving_right and self.rect.right < self.screen_rect.right:
-            self.x += 1.5
-        if self.moving_left and self.rect.left > 0:
-            self.x -= 1.5
+
         if self.moving_top and self.rect.top > self.screen_rect.top:
             self.y -= 1.5
         if self.moving_bottom and self.rect.bottom < self.screen_rect.bottom:
@@ -85,13 +80,8 @@ class Rocket:
 
     def _check_keydown_events(self, event):
         """Respond to keypresses."""
-        if event.key == pygame.K_RIGHT:
-            # move the ship to the right
-            self.ship.moving_right = True
-        elif event.key == pygame.K_LEFT:
-            # move the ship to the left
-            self.ship.moving_left = True
-        elif event.key == pygame.K_UP:
+
+        if event.key == pygame.K_UP:
             self.ship.moving_top = True
         elif event.key == pygame.K_DOWN:
             self.ship.moving_bottom = True
@@ -100,12 +90,7 @@ class Rocket:
 
     def _check_keyup_events(self, event):
         """respond to key releases"""
-        if event.key == pygame.K_RIGHT:
-            self.ship.moving_right = False
-        elif event.key == pygame.K_LEFT:
-            # stopping move the ship to the left
-            self.ship.moving_left = False
-        elif event.key == pygame.K_UP:
+        if event.key == pygame.K_UP:
             self.ship.moving_top = False
         elif event.key == pygame.K_DOWN:
             self.ship.moving_bottom = False
