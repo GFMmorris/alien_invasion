@@ -1,5 +1,33 @@
 import sys
 import pygame
+from pygame.sprite import Sprite
+
+class Bullet(Sprite):
+    """A class to manage bulltets from the ship"""
+
+    def __init__(self, ai_game):
+        """Create a bullet object at the ships """
+        super().__init__()
+        self.screen = ai_game.screen
+        self.color = (60,60,60)
+
+        # Create a bullet rext at (0,0_ and then set correct position.
+        self.rect = pygame.Rect(0, 0, 15, 3)
+        self.rect.midright = ai_game.ship.rect.midright
+
+        # store the bullets position as a decimal value
+        self.x = float(self.rect.x)
+
+    def update(self):
+        """Move the bullet up the screen."""
+        #update the decimal position of the bullet
+        self.x += 1.0
+        #update the rect position
+        self.rect.x = self.x
+
+    def draw_bullet(self):
+        """Draw the bullet to the screen"""
+        pygame.draw.rect(self.screen, self.color, self.rect)
 
 
 class Ship:
@@ -42,8 +70,7 @@ class Ship:
         """Draw the ship att its current location."""
         self.screen.blit(self.image, self.rect)
 
-
-class Rocket:
+class SidewaysShooter:
 
     def __init__(self):
         """Initialize the game, and create game resources."""
@@ -54,9 +81,10 @@ class Rocket:
         self.screen_width = 1000
         self.screen_height = 800
         self.bg_color = (230, 230, 230)
-        pygame.display.set_caption("Rocket")
+        pygame.display.set_caption("SidewaysShooter")
 
         self.ship = Ship(self)
+        self.bullets = pygame.sprite.Group()
 
     def run_game(self):
         while True:
@@ -64,6 +92,7 @@ class Rocket:
             # (4)
             self._check_events()
             self.ship.update()
+            self._update_bullets()
             self._update_screen()
 
     def _check_events(self):
@@ -86,6 +115,8 @@ class Rocket:
             self.ship.moving_bottom = True
         elif event.key == pygame.K_q:
             sys.exit()
+        elif event.key == pygame.K_SPACE:
+            self._fire_bullet()
 
     def _check_keyup_events(self, event):
         """respond to key releases"""
@@ -94,17 +125,36 @@ class Rocket:
         elif event.key == pygame.K_DOWN:
             self.ship.moving_bottom = False
 
+    def _fire_bullet(self):
+        """Create a new bullet and add it to the bullet group"""
+        if len(self.bullets) < 3:
+            new_bullet = Bullet(self)
+            self.bullets.add(new_bullet)
+
+    def _update_bullets(self):
+        """update position of bullets and get rid of old bullets."""
+        # update bullets position
+        self.bullets.update()
+
+        # get rid of bullets that have disappeared
+        for bullet in self.bullets.copy():
+            if bullet.rect.bottom <= 0:
+                self.bullets.remove(bullet)
+
     def _update_screen(self):
         """Update images on te screen, and flip to the new screen."""
         # Redraw the screen during each pass through the loop.
         self.screen.fill(self.bg_color)
         self.ship.blitme()
 
+        for bullet in self.bullets.sprites():
+            bullet.draw_bullet()
         # Make the most recently drawn screen visible.
         pygame.display.flip()
 
 
+
 if __name__ == '__main__':
     # make a game instance and run the game.
-    ai = Rocket()
+    ai = SidewaysShooter()
     ai.run_game()
