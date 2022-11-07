@@ -118,7 +118,6 @@ class AlienInvasion:
         alien.rect.y = alien_height + 2 * alien.rect.height * row_number
         self.aliens.add(alien)
 
-
     def _update_screen(self):
         """Update images on te screen, and flip to the new screen."""
         # Redraw the screen during each pass through the loop.
