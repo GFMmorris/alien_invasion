@@ -91,6 +91,10 @@ class AlienInvasion:
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
 
+        #get rid of bullets that have hit aliens
+        #   if so, get rid of the bullet and the alien.
+        collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
+
     def _update_aliens(self):
         """Update the alien position"""
         self._check_fleet_edges()
@@ -137,7 +141,7 @@ class AlienInvasion:
             alien.rect.y += self.settings.fleet_drop_speed
 
         #this line right here is imparative if you want the fleet to change directions.
-        
+
         self.settings.fleet_direction *= -1
 
     def _update_screen(self):
