@@ -96,7 +96,6 @@ class AlienInvasion:
         self._check_fleet_edges()
         self.aliens.update()
 
-
     def _create_fleet(self):
         """Create the fleet of aliens."""
         # make aliens
@@ -136,7 +135,11 @@ class AlienInvasion:
         ###drop the entire fleet's direction
         for alien in self.aliens.sprites():
             alien.rect.y += self.settings.fleet_drop_speed
-        self.settings.fleet_direction
+
+        #this line right here is imparative if you want the fleet to change directions.
+        
+        self.settings.fleet_direction *= -1
+
     def _update_screen(self):
         """Update images on te screen, and flip to the new screen."""
         # Redraw the screen during each pass through the loop.
