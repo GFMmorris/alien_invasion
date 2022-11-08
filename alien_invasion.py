@@ -91,9 +91,20 @@ class AlienInvasion:
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
 
-        #get rid of bullets that have hit aliens
+        self._check_bullet_alien_collisions()
+
+        # get rid of bullets that have hit aliens
         #   if so, get rid of the bullet and the alien.
+
+    def _check_bullet_alien_collisions(self):
+        """Responds to bullet-alien collisions."""
+        # Removes any bullets and aliens that have collided.
         collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
+
+        if not self.aliens:
+            # destroy existing bullets and create a new fleet
+            self.bullets.empty()
+            self._create_fleet()
 
     def _update_aliens(self):
         """Update the alien position"""
@@ -136,11 +147,11 @@ class AlienInvasion:
                 break
 
     def _change_fleet_direction(self):
-        ###drop the entire fleet's direction
+        # drop the entire fleet's direction
         for alien in self.aliens.sprites():
             alien.rect.y += self.settings.fleet_drop_speed
 
-        #this line right here is imparative if you want the fleet to change directions.
+        # this line right here is imparative if you want the fleet to change directions.
 
         self.settings.fleet_direction *= -1
 
