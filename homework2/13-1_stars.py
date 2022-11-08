@@ -31,10 +31,8 @@ class Stars:
             self._check_events()
             self._update_screen()
 
-
-
     def _update_screen(self):
-        self.screen.fill((30, 30, 160))
+        self.screen.fill((230, 230, 230))
         self.stars.draw(self.screen)
 
         pygame.display.flip()
