@@ -7,6 +7,7 @@ from random import randint
 from settings import Settings
 from rain import Rain
 
+
 class Raindrops:
 
     def __init(self):
@@ -35,7 +36,7 @@ class Raindrops:
                 sys.exit()
 
     def _check_keydown_events(self, event):
-        """Respond to keypresses."""
+        """Respond to key-presses."""
         if event.key == pygame.K_q:
             sys.exit()
 
@@ -45,34 +46,44 @@ class Raindrops:
         #     new_bullet = Bullet(self)
         #     self.bullets.add(new_bullet)
 
-    def _update_bullets(self):
-
-        # """update position of rows and get rid of old rows."""
-        # # update bullets position
-        # self.bullets.update()
-        #
-        # # get rid of bullets that have disappeared
-        # for bullet in self.bullets.copy():
-        #     if bullet.rect.bottom <= 0:
-        #         self.bullets.remove(bullet)
-        #
-        # self._check_bullet_alien_collisions()
-        #
-        # # get rid of bullets that have hit aliens
-        # #   if so, get rid of the bullet and the alien.
+    # def _update_rain(self):
+    #
+    #     """update position of rows and get rid of old rows."""
+    #     # update bullets position
+    #     self.bullets.update()
+    #
+    #     # get rid of bullets that have disappeared
+    #     for bullet in self.bullets.copy():
+    #         if bullet.rect.bottom <= 0:
+    #             self.bullets.remove(bullet)
+    #
+    #     self._check_bullet_alien_collisions()
+    #
+    #     # get rid of bullets that have hit aliens
+    #     #   if so, get rid of the bullet and the alien.
 
     def _create_rain_sheet(self):
+        rain = Rain(self)
 
-        star = Rain(self)
+        rain_width, rain_height = rain.rect.size
+        available_space_x = self.settings.screen_width - (2 * rain_width)
+        number_stars_x = available_space_x // (2 * rain_width)
 
-        available_space_x = self.screen_width - (2 * rain_width)
-        number_stars_x = available_space_x // (2 * star_width)
-
-        available_space_y = (self.screen_height - (3 * star_height))
-        number_rows = available_space_y // (2 * star_height)
+        available_space_y = (self.settings.screen_height - (3 * rain_height))
+        number_rows = available_space_y // (2 * rain_height)
 
         for row_number in range(number_rows):
             for star_number in range(number_stars_x):
                 if randint(0, 100) >= 90:
                     self._create_star(star_number, row_number)
 
+    def _update_screen(self):
+
+        self.screen.fill(self.settings.bg_color)
+
+        pygame.display.flip()
+
+
+if __name__ == 'main':
+    ai = Raindrops()
+    ai.run_game()
