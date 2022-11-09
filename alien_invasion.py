@@ -164,6 +164,8 @@ class AlienInvasion:
             for alien_number in range(number_aliens_x):
                 self._create_alien(alien_number, row_number)
 
+        print(alien_width, alien_height, number_aliens_x)
+
     def _create_alien(self, alien_number, row_number):
         # create an alien and place it in the row.
         alien = Alien(self)
