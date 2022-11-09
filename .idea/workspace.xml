@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="81c15964-d4c8-4cf4-a56a-155313f2cb37" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alien.py" beforeDir="false" afterPath="$PROJECT_DIR$/alien.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework2/13-3/13-3 raindrops.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-3/13-3 raindrops.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework2/13-3/rain.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-3/rain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework2/images/og_rain.png" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-3/images/rain.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,12 +79,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/homework2/13-3/13-3 raindrops.py</url>
-          <line>42</line>
+          <line>44</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/homework2/13-3/13-3 raindrops.py</url>
-          <line>48</line>
+          <line>50</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>

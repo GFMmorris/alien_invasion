@@ -10,7 +10,7 @@ from rain import Rain
 
 class Raindrops:
 
-    def __init(self):
+    def __init__(self):
 
         pygame.init()
         self.settings = Settings()
@@ -34,6 +34,8 @@ class Raindrops:
             # (5)
             if event.type == pygame.QUIT:
                 sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                self._check_keydown_events(event)
 
     def _check_keydown_events(self, event):
         """Respond to key-presses."""
@@ -75,7 +77,12 @@ class Raindrops:
         for row_number in range(number_rows):
             for star_number in range(number_stars_x):
                 if randint(0, 100) >= 90:
-                    self._create_star(star_number, row_number)
+                    self._create_raindrop(rain_number)
+
+    def _create_raindrop(self, rain_number):
+        raindrop = Rain(self)
+        rain_width, rain_height = rain.rect.size
+        rain.
 
     def _update_screen(self):
 
@@ -84,6 +91,6 @@ class Raindrops:
         pygame.display.flip()
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     ai = Raindrops()
     ai.run_game()
