@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81c15964-d4c8-4cf4-a56a-155313f2cb37" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/raindrops2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/alien.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/alien.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework2/13-3/13-3 raindrops.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-3/13-3 raindrops.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +44,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/m254524/Documents/GitHub/alien_invasion/homework1/images",
+    "last_opened_file_path": "C:/Users/m254524/Documents/GitHub/alien_invasion",
     "settings.editor.selected.configurable": "editor.preferences.gutterIcons",
     "two.files.diff.last.used.file": "C:/Users/m254524/Documents/GitHub/alien_invasion/game.py"
   }
@@ -48,6 +54,7 @@
       <recent name="C:\Users\m254524\Documents\GitHub\alien_invasion\homework1\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\m254524\Documents\GitHub\alien_invasion" />
       <recent name="C:\Users\m254524\Documents\GitHub\alien_invasion\homework2\13-3\images" />
       <recent name="C:\Users\m254524\Documents\GitHub\alien_invasion\homework2\images" />
     </key>
@@ -86,6 +93,11 @@
           <url>file://$PROJECT_DIR$/homework2/13-3/13-3 raindrops.py</url>
           <line>50</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/homework2/13-3/13-3 raindrops.py</url>
+          <line>66</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

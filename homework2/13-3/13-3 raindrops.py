@@ -20,7 +20,7 @@ class Raindrops:
         self.settings.screen_height = self.screen.get_rect().height
         pygame.display.set_caption("Rain shower")
 
-        self.rain = pygame.sprite.Group()
+        self.raindrops = pygame.sprite.Group()
 
     def run_game(self):
         while True:
@@ -81,8 +81,11 @@ class Raindrops:
 
     def _create_raindrop(self, rain_number):
         raindrop = Rain(self)
-        rain_width, rain_height = rain.rect.size
-        rain.
+        rain_width, rain_height = raindrop.rect.size
+        raindrop.x = rain_width + 2 * rain_width * rain_number
+        raindrop.rect.x = raindrop.x
+        raindrop.rect.y = rain_height + 2 * rain_height
+        self.raindrops.add(raindrop)
 
     def _update_screen(self):
 
