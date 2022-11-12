@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81c15964-d4c8-4cf4-a56a-155313f2cb37" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/homework2/13-3/alien.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/alien.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/alien.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework2/13-3/images/rain.png" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-3/images/rain.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/13-3/alien.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-3/alien.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/13-3/raindrops2.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-3/raindrops2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework2/13-3/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-3/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/raindrops2.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-3/raindrops2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

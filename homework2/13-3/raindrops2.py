@@ -3,7 +3,7 @@
 import sys
 
 import pygame
-
+from random import randint
 from settings import Settings
 
 from alien import Alien
@@ -24,10 +24,10 @@ class AlienInvasion:
         self.settings.screen_height = self.screen.get_rect().height
         pygame.display.set_caption("Raindrops")
 
-
         self.aliens = pygame.sprite.Group()
 
         self._create_fleet()
+
 
     def run_game(self):
         """Start the main loop for the game."""
@@ -36,6 +36,8 @@ class AlienInvasion:
             # Watch the keyboard and mouse events.
             # (4)
             self._check_events()
+
+            self.aliens.update()
             self._update_screen()
 
     def _check_events(self):
@@ -52,11 +54,10 @@ class AlienInvasion:
         if event.key == pygame.K_q:
             sys.exit()
 
-
-    # def _check_bullet_alien_collisions(self):
-    #     """Responds to bullet-alien collisions."""
-    #     # Removes any bullets and aliens that have collided.
-    #     collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
+    def _check_bottom_alien_collisions(self):
+        """Responds to bullet-alien collisions."""
+        # Removes any bullets and aliens that have collided.
+        collisions = pygame.sprite.groupcollide(self.screen.rect.bottom, self.aliens, True, True)
     #
     #     if not self.aliens:
     #         # destroy existing bullets and create a new fleet
@@ -65,11 +66,10 @@ class AlienInvasion:
 
     def _update_aliens(self):
         """Update the alien position"""
-        self._check_fleet_edges()
         self.aliens.update()
 
         # look for aliens hitting the bottom of the screen.
-        self._check_aliens_bottom()
+        # self._check_aliens_bottom()
 
     def _create_fleet(self):
         """Create the fleet of aliens."""
@@ -85,9 +85,9 @@ class AlienInvasion:
 
         # Create one row of aliens.
         for row_number in range(number_rows):
-            # Create first row of aliens
             for alien_number in range(number_aliens_x):
-                self._create_alien(alien_number, row_number)
+                if randint(0, 100) >= 90:
+                    self._create_alien(alien_number, row_number)
 
         print(alien_width, alien_height, number_aliens_x)
 
