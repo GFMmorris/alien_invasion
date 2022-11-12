@@ -1,16 +1,16 @@
-# Raindrop settings file
-
 class Settings:
+    """A class to store all settings for Alie Invasion"""
 
     def __init__(self):
-        # screen settings
+        """Init game settings
+        # Screen Settings"""
         self.screen_width = 1000
-        self.screen_height = 800
+        self.screen_height = 600
         self.bg_color = (230, 230, 230)
 
-        # rain settings
+        # Alien settings
+        self.alien_speed = 10
+        self.fleet_drop_speed = 10
 
-        self.rain_speed = 1
-
-        # rain direction of -1 is down, 1 is up
-        self.rain_direction = -1
+        # fleet direction of 1 represents right; -1 represents left
+        self.fleet_direction = 1

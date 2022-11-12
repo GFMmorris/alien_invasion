@@ -76,7 +76,7 @@ class Stars:
         self.stars.add(star)
 
     def _update_screen(self):
-        self.screen.fill((230, 230, 230))
+        self.screen.fill((1, 1, 1))
 
         self.stars.draw(self.screen)
 
