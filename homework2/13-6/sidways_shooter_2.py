@@ -3,11 +3,11 @@ import pygame
 from random import random
 from alien import Alien
 from pygame.sprite import Sprite
-
+from game_stats import GameStats
 
 
 class Bullet(Sprite):
-    """A class to manage bulltets from the ship"""
+    """A class to manage bullets from the ship"""
 
     def __init__(self, ai_game):
         """Create a bullet object at the ships """
@@ -15,7 +15,7 @@ class Bullet(Sprite):
         self.screen = ai_game.screen
         self.color = (60, 60, 60)
 
-        # Create a bullet rext at (0,0_ and then set correct position.
+        # Create a bullet rext at (0,0) and then set correct position.
         self.rect = pygame.Rect(0, 0, 15, 3)
         self.rect.midright = ai_game.ship.rect.midright
 
@@ -72,6 +72,10 @@ class Ship:
         # update rect object from self.x and self.y
         self.rect.y = self.y
 
+    def center_ship(self):
+        self.rect.midleft = self.screen_rect.midleft
+        self.y = float(self.rect.y)
+
     def blitme(self):
         """Draw the ship att its current location."""
         self.screen.blit(self.image, self.rect)
@@ -90,6 +94,8 @@ class SidewaysShooter:
         self.bg_color = (230, 230, 230)
         pygame.display.set_caption("SidewaysShooter")
 
+        self.stats = GameStats(self)
+
         self.alien_frequency = 0.008
 
         self.ship = Ship(self)
@@ -101,12 +107,13 @@ class SidewaysShooter:
             # Watch the keyboard and mouse events.
             # (4)
             self._check_events()
+            if self.stats.game_active:
+                self._create_alien()
 
-            self._create_alien()
+                self.ship.update()
+                self._update_bullets()
+                self.aliens.update()
 
-            self.ship.update()
-            self._update_bullets()
-            self.aliens.update()
             self._update_screen()
 
     def _check_events(self):
@@ -121,7 +128,7 @@ class SidewaysShooter:
                 self._check_keyup_events(event)
 
     def _check_keydown_events(self, event):
-        """Respond to keypresses."""
+        """Respond to key presses."""
 
         if event.key == pygame.K_UP:
             self.ship.moving_top = True
@@ -165,6 +172,37 @@ class SidewaysShooter:
             alien = Alien(self)
             self.aliens.add(alien)
             print(len(self.aliens))
+
+    def _update_aliens(self):
+        """Update alien positions, and look for collisions with ship."""
+        self.aliens.update()
+
+        if pygame.sprite.spritecollideany(self.ship, self.aliens):
+            self._ship_hit()
+
+        # Look for aliens that have hit the left edge of the screen.
+        self._check_aliens_left_edge()
+
+    def _check_aliens_left_edge(self):
+        for alien in self.aliens.sprites():
+            if alien.rect.left < 0:
+                self._ship_hit()
+                break
+
+    def _ship_hit(self):
+        """Respond to an alien hitting the ship."""
+        if self.stats.ships_left > 0:
+            # Decrement ships left.
+            self.stats.ships_left -= 1
+
+            # Get rid of any remaining aliens and bullets.
+            self.aliens.empty()
+            self.bullets.empty()
+
+            # Center the ship.
+            self.ship.center_ship()
+        else:
+            self.stats.game_active = False
 
     def _update_screen(self):
         """Update images on te screen, and flip to the new screen."""
