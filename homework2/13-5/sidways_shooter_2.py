@@ -1,6 +1,9 @@
 import sys
 import pygame
+from random import random
+from alien import Alien
 from pygame.sprite import Sprite
+
 
 class Bullet(Sprite):
     """A class to manage bulltets from the ship"""
@@ -9,7 +12,7 @@ class Bullet(Sprite):
         """Create a bullet object at the ships """
         super().__init__()
         self.screen = ai_game.screen
-        self.color = (60,60,60)
+        self.color = (60, 60, 60)
 
         # Create a bullet rext at (0,0_ and then set correct position.
         self.rect = pygame.Rect(0, 0, 15, 3)
@@ -20,9 +23,9 @@ class Bullet(Sprite):
 
     def update(self):
         """Move the bullet up the screen."""
-        #update the decimal position of the bullet
+        # update the decimal position of the bullet
         self.x += 5.5
-        #update the rect position
+        # update the rect position
         self.rect.x = self.x
 
     def draw_bullet(self):
@@ -72,6 +75,7 @@ class Ship:
         """Draw the ship att its current location."""
         self.screen.blit(self.image, self.rect)
 
+
 class SidewaysShooter:
 
     def __init__(self):
@@ -85,16 +89,23 @@ class SidewaysShooter:
         self.bg_color = (230, 230, 230)
         pygame.display.set_caption("SidewaysShooter")
 
+        self.alien_frequency = 0.008
+
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
+        self.aliens = pygame.sprite.Group()
 
     def run_game(self):
         while True:
             # Watch the keyboard and mouse events.
             # (4)
             self._check_events()
+
+            self._create_alien()
+
             self.ship.update()
             self._update_bullets()
+            self.aliens.update()
             self._update_screen()
 
     def _check_events(self):
@@ -143,6 +154,17 @@ class SidewaysShooter:
             if bullet.rect.left >= self.screen_width:
                 self.bullets.remove(bullet)
 
+        self._check_bullet_alien_collisions()
+
+    def _check_bullet_alien_collisions(self):
+        collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
+
+    def _create_alien(self):
+        if random() < self.alien_frequency:
+            alien = Alien(self)
+            self.aliens.add(alien)
+            print(len(self.aliens))
+
     def _update_screen(self):
         """Update images on te screen, and flip to the new screen."""
         # Redraw the screen during each pass through the loop.
@@ -151,9 +173,10 @@ class SidewaysShooter:
 
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
+
+        self.aliens.draw(self.screen)
         # Make the most recently drawn screen visible.
         pygame.display.flip()
-
 
 
 if __name__ == '__main__':

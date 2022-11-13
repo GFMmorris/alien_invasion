@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81c15964-d4c8-4cf4-a56a-155313f2cb37" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/homework2/13-5/alien.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homework2/13-5/images/alien.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homework2/13-5/images/ship.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/homework2/13-5/sidways_shooter_2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework1/Sideways-Shooter.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework1/Sideways-Shooter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/alien.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/alien.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework2/13-4/raindrops_forever.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-4/raindrops_forever.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,13 +46,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/m254524/Documents/GitHub/alien_invasion/homework2/13-4",
+    "last_opened_file_path": "C:/Users/m254524/Documents/GitHub/alien_invasion/homework2/13-5/images",
     "settings.editor.selected.configurable": "editor.preferences.gutterIcons",
     "two.files.diff.last.used.file": "C:/Users/m254524/Documents/GitHub/alien_invasion/game.py"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\m254524\Documents\GitHub\alien_invasion\homework2\13-5\images" />
       <recent name="C:\Users\m254524\Documents\GitHub\alien_invasion\homework2\13-4" />
       <recent name="C:\Users\m254524\Documents\GitHub\alien_invasion\homework2\13-4\images" />
       <recent name="C:\Users\m254524\Documents\GitHub\alien_invasion\homework1\images" />
