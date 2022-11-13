@@ -22,8 +22,7 @@ class AlienInvasion:
         pygame.display.set_caption("Raindrops")
 
         self.aliens = pygame.sprite.Group()
-
-        self._create_fleet()
+        self._create_aliens()
 
     def run_game(self):
         """Start the main loop for the game."""
@@ -33,7 +32,7 @@ class AlienInvasion:
             # (4)
             self._check_events()
 
-            self.aliens.update()
+            self._update_aliens()
             self._update_screen()
 
     def _check_events(self):
@@ -50,27 +49,40 @@ class AlienInvasion:
         if event.key == pygame.K_q:
             sys.exit()
 
+
+
+    def _create_aliens(self):
+        # create an alien and place it in the row.
+        alien = Alien(self)
+        alien_width, alien_height = alien.rect.size
+        available_space_x = self.settings.screen_width - alien_width
+
+        self.number_aliens_x = available_space_x // (2* alien_width)
+
+        available_space_y = self.settings.screen_height
+        number_rows = available_space_y // (2 * alien_height)
+        for row_number in range(number_rows):
+            self._create_row(row_number)
+
     def _create_row(self, row_number):
         for alien_number in range(self.number_aliens_x):
             self._create_alien(alien_number, row_number)
 
     def _create_alien(self, alien_number, row_number):
-        # create an alien and place it in the row.
         alien = Alien(self)
         alien_width, alien_height = alien.rect.size
-        alien.x = alien_width + 2 * alien_width * alien_number
-        alien.rect.x = alien.x
+        alien.rect.x = alien_width + 2 * alien_width * alien_number
         alien.y = 2 * alien.rect.height * row_number
         alien.rect.y = alien.y
         self.aliens.add(alien)
 
-    def _update_raindrops(self):
+    def _update_aliens(self):
         self.aliens.update()
 
         make_new_aliens = False
-        for drop in self.aliens.copy():
-            if drop.check_disappeared():
-                self.aliens.remove(drop)
+        for alien in self.aliens.copy():
+            if alien.check_disappeared():
+                self.aliens.remove(alien)
                 make_new_aliens = True
 
         if make_new_aliens:
