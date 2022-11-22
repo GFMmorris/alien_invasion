@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81c15964-d4c8-4cf4-a56a-155313f2cb37" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/alien.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/alien.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-1_ehmatthes/Alien_invasion/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework2/13-6/game_stats.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-6/game_stats.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework2/13-6/sidways_shooter_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/homework2/13-6/sidways_shooter_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/pcc_2e_ai_solutions/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/pcc_2e_ai_solutions/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/pcc_2e_ai_solutions/.idea/pcc_2e_ai_solutions.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/pcc_2e_ai_solutions/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/pcc_2e_ai_solutions/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework2/13-1_ehmatthes/pcc_2e_ai_solutions/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +46,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/m254524/Documents/GitHub/alien_invasion/homework2/13-6",
-    "settings.editor.selected.configurable": "editor.preferences.gutterIcons",
+    "last_opened_file_path": "C:/Users/m254524/Documents/GitHub/final_game",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "two.files.diff.last.used.file": "C:/Users/m254524/Documents/GitHub/alien_invasion/game.py"
   }
 }]]></component>
@@ -85,6 +88,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/homework2/13-1_ehmatthes/pcc_2e_ai_solutions" />
+    </ignored-roots>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
